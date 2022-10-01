@@ -1,0 +1,14 @@
+//Current=CARÝ demek
+// Bill= Fatura demek
+// vergi dairesi=Tax Administration
+//Teslim Alan=Receiver
+//Gönderen=submitter 
+//bill item= fatura kalem demek
+//bill item= fatura kalem demek
+//Quantity=miktar
+//Amount=tutar
+//UnitQuantities=birim miktar
+
+//char yazdýðýmýzda Tek karakter olarak tutacaðýz  
+
+1. ilk modeli oluþturduk. Altýnda sýnýflar klasörü oluþturduk ve içine Category; Current; Employee; Product; Departman sýnýflarý ekledik.
