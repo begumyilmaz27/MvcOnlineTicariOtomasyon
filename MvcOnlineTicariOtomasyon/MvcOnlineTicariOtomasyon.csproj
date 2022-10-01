@@ -124,12 +124,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Bills.cs" />
     <Compile Include="Models\Sınıflar\Bill_Item.cs" />
     <Compile Include="Models\Sınıflar\Category.cs" />
     <Compile Include="Models\Sınıflar\Current.cs" />
     <Compile Include="Models\Sınıflar\Departman.cs" />
     <Compile Include="Models\Sınıflar\Employee.cs" />
+    <Compile Include="Models\Sınıflar\Expense.cs" />
     <Compile Include="Models\Sınıflar\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

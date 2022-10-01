@@ -13,12 +13,12 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string BillSerialNumber { get; set; } 
         public string BillSıraNumber { get; set; } 
         public DateTime BillDate { get; set; }  
-        public string TaxAdministration { get; set; }
+        public string BillTaxAdministration { get; set; }
         //vergi dairesi=Tax Administration
-        public DateTime Hour { get; set; }
-        public string Receiver { get; set; }
+        public DateTime BillHour { get; set; }
+        public string BillReceiver { get; set; }
         //Teslim Alan=Receiver
-        public string Submitter { get; set; }
+        public string BillSubmitter { get; set; }
         //Gönderen=submitter 
 
     }

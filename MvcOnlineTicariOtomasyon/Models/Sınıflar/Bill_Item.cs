@@ -10,15 +10,14 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
     {
         //bill item= fatura kalem demek
 
-
         [Key]
         public int Bill_ItemID { get; set; }
-        public string Description { get; set; }
-        public int Quantity { get; set; }
+        public string BillDescription { get; set; }
+        public int BillQuantity { get; set; }
         //Quantity=miktar
-        public decimal UnitQuantities { get; set; }
+        public decimal BillUnitQuantities { get; set; }
         //UnitQuantities=birim miktar
-        public decimal Amount { get; set; }
+        public decimal BillAmount { get; set; }
         //Amount=tutar
 
 

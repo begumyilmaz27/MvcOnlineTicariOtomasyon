@@ -8,6 +8,8 @@
 //Quantity=miktar
 //Amount=tutar
 //UnitQuantities=birim miktar
+//Authority=yetki
+//Expense=Gider
 
 //char yazdýðýmýzda Tek karakter olarak tutacaðýz  
 
