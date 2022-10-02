@@ -1,16 +1,28 @@
 //Current=CARÝ demek
-// Bill= Fatura demek
-// vergi dairesi=Tax Administration
-//Teslim Alan=Receiver
-//Gönderen=submitter 
-//bill item= fatura kalem demek
+//Bill= Fatura demek
+//Tax Administration=vergi dairesi
+//Receiver=Teslim Alan
+//submitter =Gönderen
 //bill item= fatura kalem demek
 //Quantity=miktar
-//Amount=tutar
 //UnitQuantities=birim miktar
 //Authority=yetki
 //Expense=Gider
+//Piece=adet
+//SalesMovement=satýþ hareketi
+//SalesMovement_Price
+//SalesMovement_TotalAmount
+//Price=Fiyat
+//TotalAmount=Toplam Tutar
+//Brand=marka
+//Receiver=Teslim Alan
+//submitter=Gönderen
+//Price=fiyat
+//TotalAmount=Toplam Tutar
+//Amount=tutar
 
-//char yazdýðýmýzda Tek karakter olarak tutacaðýz  
+//char yazdýðýmýzda Tek karakter olarak tutacaðýz
+//string olan deðiþkeni veri tabýnýnda nvarchar(max) olarak tutuyor çok bellek tutuyor.
+// bool'u int; int' int; short'u smallint olarak tamamlayack. bunlarda sorun olmuyor ama string'leri kýsýtlayacaðýz.
 
-1. ilk modeli oluþturduk. Altýnda sýnýflar klasörü oluþturduk ve içine Category; Current; Employee; Product; Departman sýnýflarý ekledik.
+ 

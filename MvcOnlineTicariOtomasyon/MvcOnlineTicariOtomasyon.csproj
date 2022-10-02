@@ -133,6 +133,7 @@
     <Compile Include="Models\Sınıflar\Employee.cs" />
     <Compile Include="Models\Sınıflar\Expense.cs" />
     <Compile Include="Models\Sınıflar\Product.cs" />
+    <Compile Include="Models\Sınıflar\SalesMovement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

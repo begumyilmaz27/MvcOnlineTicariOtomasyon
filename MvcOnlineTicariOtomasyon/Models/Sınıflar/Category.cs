@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,14 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
 
         [Key]
         public int CategoryID { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(30)]
         public string CategoryName  { get; set; }
+
+        //----------------------------------------------------------------------------
+
+        //category tablosunda birden fazla ürün olabilir. ve int değil ıcollection kullandık çünkü birden fazla şey tutacak bir yapıya ihtiyacımız var. interface'dir ıcollection yapısı. ↓ ↓ ↓
+        public ICollection<Product> Products { get; set; }
     }
 }

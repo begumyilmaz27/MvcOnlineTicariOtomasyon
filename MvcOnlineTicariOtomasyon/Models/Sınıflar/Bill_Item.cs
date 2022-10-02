@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -12,14 +13,18 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
 
         [Key]
         public int Bill_ItemID { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(100)]
         public string BillDescription { get; set; }
         public int BillQuantity { get; set; }
-        //Quantity=miktar
         public decimal BillUnitQuantities { get; set; }
-        //UnitQuantities=birim miktar
         public decimal BillAmount { get; set; }
-        //Amount=tutar
 
+        //-------------------------------------------------------------------------
+
+        //Fatura ve FaturaKalem arasında ilişki kurucaz. Yani Bills ve Bill_Item. Bir faturanın birden fazla kalemi olabilir. Bu yüzden Bills den araç ürettik.
+        public Bills Bills { get; set; }
 
     }
 }

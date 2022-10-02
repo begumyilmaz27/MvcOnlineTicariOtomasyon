@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,17 +10,36 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
     public class Bills
     {
         [Key]
-        public int BillID { get; set; }     
-        public string BillSerialNumber { get; set; } 
-        public string BillSıraNumber { get; set; } 
-        public DateTime BillDate { get; set; }  
-        public string BillTaxAdministration { get; set; }
-        //vergi dairesi=Tax Administration
-        public DateTime BillHour { get; set; }
-        public string BillReceiver { get; set; }
-        //Teslim Alan=Receiver
-        public string BillSubmitter { get; set; }
-        //Gönderen=submitter 
+        public int BillID { get; set; }
 
+        [Column(TypeName = "Varchar")]
+        [StringLength(6)]
+        public string BillSerialNumber { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(6)]
+        public string BillSıraNumber { get; set; }        
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(60)]
+        public string BillTaxAdministration { get; set; }   
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(30)]
+        public string BillReceiver { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(30)]
+        public string BillSubmitter { get; set; }
+
+        public DateTime BillHour { get; set; }
+        public DateTime BillDate { get; set; }
+
+
+        //-------------------------------------------------------------------------
+
+        //Fatura ve FaturaKalem arasında ilişki kurucaz. Yani Bills ve Bill_Item. Bir faturanın birden fazla kalemi olabilir. Bu yüzden ICollection kullanıcaz.
+
+        public ICollection<Bill_Item> Bill_Items { get; set; }
     }
 }
