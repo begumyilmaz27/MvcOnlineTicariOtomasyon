@@ -25,4 +25,6 @@
 //string olan deðiþkeni veri tabýnýnda nvarchar(max) olarak tutuyor çok bellek tutuyor.
 // bool'u int; int' int; short'u smallint olarak tamamlayack. bunlarda sorun olmuyor ama string'leri kýsýtlayacaðýz.
 
+//Departman ÇOÐULU Departmen
+
  
