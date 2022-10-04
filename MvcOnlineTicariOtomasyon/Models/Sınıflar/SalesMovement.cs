@@ -24,10 +24,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
 
         //----------------------------------------------------------------------------
 
-        //Birden fazla kez olacak başlıklardan dolayı ICollection dedik. Satış hareket birden fazla PRoduct-employee-curreent içerebilir. 
-        public ICollection<Product> Products { get; set; }
-        public ICollection<Current> Currents { get; set; }
-        public ICollection<Employee> Employees { get; set; }
+        //Birden fazla kez olacak. Satış hareket birden fazla PRoduct-employee-curreent içerebilir. 
+        public Product Products { get; set; }
+        public Current Currents { get; set; }
+        public Employee Employees { get; set; }
 
 
     }

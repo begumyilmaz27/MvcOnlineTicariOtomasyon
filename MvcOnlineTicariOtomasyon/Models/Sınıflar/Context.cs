@@ -12,7 +12,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public DbSet<Bill_Item> Bill_Items { get; set; }
         public DbSet<Bills> Bills { get; set; }
         public DbSet<Category> Categories{ get; set; }
-        public DbSet<Context> Contexts { get; set; }
         public DbSet<Current> Currents{ get; set; }
         public DbSet<Departman> Departmen { get; set; }
         public DbSet<Employee> Employees{ get; set; }
@@ -20,6 +19,5 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public DbSet<Product> Products{ get; set; }
         public DbSet<SalesMovement> SalesMovements{ get; set; }
 
-        
     }
 }

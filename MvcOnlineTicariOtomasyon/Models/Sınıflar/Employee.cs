@@ -32,7 +32,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
 
         //----------------------------------------------------------------------
         //SalesMovement'dan kurduğumuz bağlantı gereği
-        public SalesMovement SalesMovement { get; set; }
+        public ICollection<SalesMovement> SalesMovements { get; set; }
 
 
     }
