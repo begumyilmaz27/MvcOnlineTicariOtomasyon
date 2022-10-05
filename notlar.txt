@@ -20,6 +20,7 @@
 //Price=fiyat
 //TotalAmount=Toplam Tutar
 //Amount=tutar
+//Report=fatura
 
 //char yazdýðýmýzda Tek karakter olarak tutacaðýz
 //string olan deðiþkeni veri tabýnýnda nvarchar(max) olarak tutuyor çok bellek tutuyor.
