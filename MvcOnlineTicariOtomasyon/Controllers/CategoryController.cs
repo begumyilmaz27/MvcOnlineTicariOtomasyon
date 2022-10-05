@@ -13,8 +13,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context c=new Context();    
         public ActionResult Index()
         {
-            
-            return View();
+            var degerler = c.Categories.ToList();
+            return View(degerler);
         }
+
+        [HttpGet]
+        public ActionResult CategoryAdd()
+        { 
+            return View();         
+        }
+        
+        [HttpPost]
+        public ActionResult CategoryAdd(Category k)
+        {
+            c.Categories.Add(k);
+            c.SaveChanges();
+            return RedirectToAction("Index");   
+        }
+
     }
 }
