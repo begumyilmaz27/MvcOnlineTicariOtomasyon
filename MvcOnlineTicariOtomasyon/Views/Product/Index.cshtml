@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>Purchase Price</th>
+        <th>Sale Price</th>
+        <th>Category</th>
+        <th>Image</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.ProductID</td>
+            <td>@u.ProductName</td>
+            <td>@u.ProductBrand</td>
+            <td>@u.ProductStock</td>
+            <td>@u.ProductPurchasePrice</td>
+            <td>@u.ProductSalePrice</td>
+            <td>@u.ProductImage</td>
+        </tr>
+    }
+</table>
