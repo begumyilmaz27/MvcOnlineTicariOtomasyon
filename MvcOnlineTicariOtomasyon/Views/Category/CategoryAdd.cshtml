@@ -1,4 +1,5 @@
-﻿
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Category
+
 @{
     ViewBag.Title = "CategoryAdd";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -6,4 +7,10 @@
 
 <br/>
 <h2>New Category Page</h2>
-<br 
+<br />
+<form class="=form-group" method="post">
+    @Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+</form>
