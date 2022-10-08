@@ -1,14 +1,15 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Product
 @{
-    ViewBag.Title = "NewProduct";
+    ViewBag.Title = "ProductBring";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
 <br />
-<h2>NewProduct Page</h2>
+<h2>Product Update Page</h2>
 <br />
-<form class="form-group" method="post">
+
+@using (Html.BeginForm("ProductUpdate", "Product", FormMethod.Post))
+{
+   @Html.HiddenFor(x=>x.ProductID)
     @Html.LabelFor(x => x.ProductName)
     @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
     <br />
@@ -38,6 +39,6 @@
     @Html.TextBoxFor(x => x.ProductSituation, new { @class = "form-control" })
     <br />
 
-    <button class="btn btn-primary">Save</button>
-</form>
+    <button class="btn btn-warning">Update</button>
 
+}

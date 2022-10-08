@@ -284,6 +284,7 @@
     <Content Include="Views\Category\CategoryBring.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\NewProduct.cshtml" />
+    <Content Include="Views\Product\ProductBring.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

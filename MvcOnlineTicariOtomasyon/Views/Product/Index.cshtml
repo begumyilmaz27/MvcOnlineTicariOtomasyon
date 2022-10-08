@@ -15,6 +15,8 @@
         <th>Sale Price</th>
         <th>Image</th>
         <th>Category</th>
+        <th>Delete</th>
+        <th>Update</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -27,7 +29,15 @@
             <td>@u.ProductSalePrice</td>
             <td>@u.ProductImage</td>
             <td>@u.Category.CategoryID</td>
+            <td>
+                <a href="/Product/ProductDelete/@u.ProductID" class=" btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <a href="/Product/ProductBring/@u.ProductID" class=" btn btn-success">Update</a>
+            </td>
+            
         </tr>
     }
 </table>
+<br />
 <a href="/Product/NewProduct/" class="btn btn-info">New Product</a>
