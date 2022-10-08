@@ -4,8 +4,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
 <br />
 <table class="table table-bordered">
     <tr>
@@ -15,8 +13,8 @@
         <th>Stock</th>
         <th>Purchase Price</th>
         <th>Sale Price</th>
-        <th>Category</th>
         <th>Image</th>
+        <th>Category</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -28,6 +26,8 @@
             <td>@u.ProductPurchasePrice</td>
             <td>@u.ProductSalePrice</td>
             <td>@u.ProductImage</td>
+            <td>@u.Category.CategoryID</td>
         </tr>
     }
 </table>
+<a href="/Product/NewProduct/" class="btn btn-info">New Product</a>

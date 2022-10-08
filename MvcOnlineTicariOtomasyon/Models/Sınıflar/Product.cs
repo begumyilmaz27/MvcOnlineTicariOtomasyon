@@ -36,7 +36,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         //----------------------------------------------------------------------------
 
         //Her ürünün sadece bir kategorisi olabilir.  ↓ ↓ ↓ ↓ Category sınıfından bir tane Category değeri aldı
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         //----------------------------------------------------------------------------
 

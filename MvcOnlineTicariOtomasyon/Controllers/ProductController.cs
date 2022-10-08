@@ -11,11 +11,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        Context c=new Context();    
+        Context c = new Context();
         public ActionResult Index()
         {
-            var products=c.Products.ToList();
-            return View(products    );
+            var products = c.Products.ToList();
+            return View(products);
+        }
+        [HttpGet]
+        public ActionResult NewProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewProduct(Product p)
+        {
+            c.Products.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
