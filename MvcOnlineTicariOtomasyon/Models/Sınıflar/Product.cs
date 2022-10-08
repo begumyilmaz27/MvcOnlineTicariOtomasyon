@@ -32,6 +32,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(250)]
         public string ProductImage { get; set; }
 
+        public int CategoryId { get; set; } 
 
         //----------------------------------------------------------------------------
 
