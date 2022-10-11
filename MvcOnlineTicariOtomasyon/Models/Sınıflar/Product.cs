@@ -21,6 +21,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string ProductBrand { get; set; }
+
         public short ProductStock { get; set; }
         //C# daki short'un SQL tarafındaki karşılığı smallint. 2byte büyüklüğünde
         public decimal ProductPurchasePrice { get; set; }

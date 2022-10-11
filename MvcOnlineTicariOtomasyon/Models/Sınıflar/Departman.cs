@@ -15,6 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DepartmanName { get; set; }
+        public bool DepartmanSituation { get; set; } // Silme ve Güncelleme İşlemleri için
 
         //----------------------------------------------------------------------------
 

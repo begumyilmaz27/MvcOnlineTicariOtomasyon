@@ -27,8 +27,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         //----------------------------------------------------------------------
 
         //1 departman birden fazla persornel barındırabilir. ICOLLECTİON ile çalışanları departmana dahil ettik. Burada da bağladık
-
-        public Departman Departman { get; set; }
+        public int DepartmanId { get; set; }
+        public virtual Departman Departman { get; set; }
 
         //----------------------------------------------------------------------
         //SalesMovement'dan kurduğumuz bağlantı gereği
