@@ -290,6 +290,7 @@
     <Content Include="Views\Departman\DepartmanAdd.cshtml" />
     <Content Include="Views\Departman\DepartmanBring.cshtml" />
     <Content Include="Views\Departman\DepartmanDetail.cshtml" />
+    <Content Include="Views\Departman\DepartmanEmployeeSalesment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

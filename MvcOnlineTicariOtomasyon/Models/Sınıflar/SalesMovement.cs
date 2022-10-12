@@ -25,9 +25,12 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         //----------------------------------------------------------------------------
 
         //Birden fazla kez olacak. Satış hareket birden fazla PRoduct-employee-curreent içerebilir. 
-        public Product Products { get; set; }
-        public Current Currents { get; set; }
-        public Employee Employees { get; set; }
+        public int ProductID { get; set; }  
+        public int CurrentID { get; set; }  
+        public int EmployeeID { get; set; }  
+        public virtual Product Products { get; set; }
+        public virtual Current Currents { get; set; }
+        public virtual Employee Employees { get; set; }
 
 
     }

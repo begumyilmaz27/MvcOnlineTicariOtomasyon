@@ -12,6 +12,7 @@
 //SalesMovement=satýþ hareketi
 //SalesMovement_Price
 //SalesMovement_TotalAmount
+//SalesMovement_Piece = Satýþ hareket Adeti
 //Price=Fiyat
 //TotalAmount=Toplam Tutar
 //Brand=marka

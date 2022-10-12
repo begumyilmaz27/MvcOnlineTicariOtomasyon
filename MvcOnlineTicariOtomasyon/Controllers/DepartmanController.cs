@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
@@ -51,7 +52,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanDetail(int id)
         {
-            return View();
+            var degerler=c.Employees.Where(e => e.EmployeeID == id).ToList();
+            var dpt=c.Departmen.Where(x=>x.DepartmanId==id).Select(y=>y.DepartmanName).FirstOrDefault();
+            ViewBag.d=dpt;
+            return View(degerler);
+        }
+        public ActionResult DepartmanEmployeeSalesment(int id)
+        {
+            var degerler1=c.SalesMovements.Where(x=>x.EmployeeID==id).ToList();
+            var per=c.Employees.Where(x=>x.EmployeeID==id).Select(y=>y.EmployeeName+" "+y.EmployeeSurname).FirstOrDefault(); 
+            ViewBag.dper=per;
+            return View(degerler1);
         }
 
     }
