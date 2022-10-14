@@ -13,7 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var degerler = c.Currents.ToList();
+            var degerler = c.Currents.Where(x=>x.CurrentSituation==true).ToList();
             return View(degerler);
         }
         [HttpGet]
@@ -24,11 +24,37 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult NewCurrent(Current p)
         {
+            p.CurrentSituation = true;
             c.Currents.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult CurrentBring (int id)
+        {
+            var current = c.Currents.Find(id);
+            return View("Cari Getir", current);
+        }
+        public ActionResult CurrentUpdate(Current p)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Cari Getiri Döndür");
+            }
+            var cari=c.Currents.Find(p.CurrentID);
+            cari.CurrentName = p.CurrentName;
+            cari.CurrentSurname = p.CurrentSurname;
+            cari.CurrentMail = p.CurrentMail;
+            cari.CurrentCity = p.CurrentCity;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult CurrentDelete(int id)
+        {
+            var cr = c.Currents.Find(id);
+            cr.CurrentSituation = false;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
     }

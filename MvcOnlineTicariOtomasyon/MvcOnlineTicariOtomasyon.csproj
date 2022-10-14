@@ -294,6 +294,7 @@
     <Content Include="Views\Departman\DepartmanEmployeeSalesment.cshtml" />
     <Content Include="Views\Current\Index.cshtml" />
     <Content Include="Views\Current\NewCurrent.cshtml" />
+    <Content Include="Views\Current\CurrentBring.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,29 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Current
+@{
+    ViewBag.Title = "CurrentBring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Current Update Page</h2>
+<br />
+@using (Html.BeginForm("CurrentUpdate", "Current", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(x => x.CurrentID)
+                    @Html.LabelFor(x => x.CurrentName)
+                    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(x => x.CurrentSurname)
+                    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(x => x.CurrentCity)
+                    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(x => x.CurrentMail)
+                    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-warning" style="background-color:yellow">Update</button>
+                </div>
+            }
+

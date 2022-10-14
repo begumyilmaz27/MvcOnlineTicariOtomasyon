@@ -14,14 +14,18 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public int CurrentID { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+
+        [StringLength(30, ErrorMessage=("en fazla 30 karakter yazabilirsin"))]
         public string CurrentName { get; set; }
 
         [Column(TypeName = "Varchar")]
+
         [StringLength(30)]
+        [Required(ErrorMessage ="Bu alanı boş geçemezsin")]
         public string CurrentSurname { get; set; }
 
         [Column(TypeName = "Varchar")]
+
         [StringLength(13)]
         public string CurrentCity { get; set; }
 
@@ -29,6 +33,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(50)]
         public string CurrentMail { get; set; }
 
+        public bool CurrentSituation { get; set; }
 
         //----------------------------------------------------------------------
 
