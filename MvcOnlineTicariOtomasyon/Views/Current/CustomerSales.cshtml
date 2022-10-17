@@ -1,14 +1,12 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
 @model List<SalesMovement>
 @{
-    ViewBag.Title = "DepartmanEmployeeSalesment";
+    ViewBag.Title = "CustomerSales";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Departman Employee Salesment</h2>
-<br />
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Employee's Name:@ViewBag.dper</li>
+    <li class="breadcrumb-item active">Current's Name:@ViewBag.current</li>
 </ol>
 <table class="table table-hover">
     <tr>
@@ -26,14 +24,15 @@
         <tr>
             <td>@u.SalesMovement_SalesID</td>
             <td>@u.Products.ProductName</td>
-            <td>@u.Currents.CurrentName @u.Currents.CurrentSurname</td>
+            <td>@u.Employees.EmployeeName @u.Employees.EmployeeSurname</td>
             <td>@u.SalesMovement_Price</td>
             <td>@u.SalesMovement_Piece</td>
             <td>@u.SalesMovement_TotalAmount</td>
-            <td>@u.SalesMovement_Date</td>            
+            <td>@u.SalesMovement_Date</td>
             <td>
                 <a href="#" class="btn btn-danger" style="background-color:deepskyblue">Print</a>
             </td>
         </tr>
     }
 </table>
+
