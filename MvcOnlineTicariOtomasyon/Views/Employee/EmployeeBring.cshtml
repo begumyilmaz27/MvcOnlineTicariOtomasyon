@@ -1,0 +1,29 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Employee
+@{
+    ViewBag.Title = "EmployeeBring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Employee Update Page</h2>
+<br />
+@using (Html.BeginForm("EmployeeUpdate", "Employee", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.EmployeeID)
+        @Html.LabelFor(x => x.EmployeeName)
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeSurname)
+        @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeImage)
+        @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(x => x.DepartmanId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-warning" style="background-color:yellow">Update</button>
+    </div>
+}

@@ -1,0 +1,38 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Current</th>
+        <th>Employee</th>
+        <th>Piece</th>
+        <th>Price</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+        <th>Update</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.SalesMovement_SalesID</td>
+            <td>@k.Products.ProductName</td>
+            <td>@k.Currents.CurrentName @k.Currents.CurrentSurname</td>
+            <td>@k.Employees.EmployeeName @k.Employees.EmployeeSurname</td>
+            <td>@k.SalesMovement_Piece</td>
+            <td>@k.SalesMovement_Price</td>
+            <td>@k.SalesMovement_TotalAmount</td>
+            <td>@k.SalesMovement_Date</td>
+            <td><a href="/SalesMovement/SalesMovementBring/@k.EmployeeID" class="btn btn-warning">Update</a></td>
+            <td><a href="/Departman/DepartmanEmployeeSalesment/@k.EmployeeID" class="btn btn-success" style="background-color:burlywood">Details</a></td>
+        </tr>
+    }
+</table>
+<a href="/SalesMovement/SalesMovementNew" class="btn btn-info">New Sales Movement</a>
+
