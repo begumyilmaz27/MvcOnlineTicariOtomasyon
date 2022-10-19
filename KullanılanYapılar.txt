@@ -1,0 +1,5 @@
+Entitiy FrameWork Linqu yapýsý var
+C# var
+View tarafýnda Html5 ~ Css3 ~ Bootstrap4 var
+Veritabaný kýsmýnda SQl var
+MVC'nin temelini oluþturan ASP var

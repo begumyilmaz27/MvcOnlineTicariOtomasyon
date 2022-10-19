@@ -26,6 +26,9 @@
 //Customer Sales=Müþteri Satýþ
 //Number of Brands=Marka sayýsý
 //Maximum Priced Product=Maksimum fiyatlý ürün
+//Today's Vault=Bugünki kasa
+//Top Seller=En Çok Satan
+//Critical Level Products=Kritik Seviyedeki Ürünler
 
 //char yazdýðýmýzda Tek karakter olarak tutacaðýz
 //string olan deðiþkeni veri tabýnýnda nvarchar(max) olarak tutuyor çok bellek tutuyor.

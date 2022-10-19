@@ -7,8 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcOnlineTicariOtomasyon", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26F9C3A9-8AF9-48E5-9A3A-873C901AFA19}"
 	ProjectSection(SolutionItems) = preProject
+		KullanılanYapılar.txt = KullanılanYapılar.txt
 		notlar.txt = notlar.txt
 		KodBloğu_ProductListcshtml ıcıne.txt = KodBloğu_ProductListcshtml ıcıne.txt
+		StatisticIndexKodBlogu.txt = StatisticIndexKodBlogu.txt
 	EndProjectSection
 EndProject
 Global
