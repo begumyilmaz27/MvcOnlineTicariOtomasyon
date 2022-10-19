@@ -6,6 +6,7 @@
 //bill item= fatura kalem demek
 //Quantity=miktar
 //UnitQuantities=birim miktar
+//Bill Unit Quantities=Fatura Birimi Miktarlarý
 //Authority=yetki
 //Expense=Gider
 //Piece=adet

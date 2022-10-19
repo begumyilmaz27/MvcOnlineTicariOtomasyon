@@ -1,0 +1,36 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Bill_Item>
+@{
+    ViewBag.Title = "BillDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Bill Item Page</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"></li>
+</ol>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>UnitQuantities</th>
+        <th>Amount</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Bill_ItemID</td>
+            <td>@u.BillDescription</td>
+            <td>@u.BillQuantity</td>
+            <td>@u.BillUnitQuantities</td>
+            <td>@u.BillAmount</td>
+        </tr>
+    }
+
+</table>
+
+<a href="#" class="btn btn-info">New Bill Item Entry</a>
+

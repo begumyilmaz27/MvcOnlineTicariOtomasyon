@@ -29,6 +29,30 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult BillBring(int id)
+        {
+            var fatura = c.Bills.Find(id);
+            return View("BillBring", fatura);
+        }
+
+        public ActionResult BillUpdate(Bills f)
+        {
+            var fatura = c.Bills.Find(f.BillID);
+            fatura.BillSerialNumber = f.BillSerialNumber;
+            fatura.BillSıraNumber = f.BillSıraNumber;
+            fatura.BillHour = f.BillHour;
+            fatura.BillDate = f.BillDate;
+            fatura.BillSubmitter = f.BillSubmitter;
+            fatura.BillReceiver = f.BillReceiver;
+            fatura.BillTaxAdministration = f.BillTaxAdministration;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult BillDetail(int id)
+        {
+            var degerler = c.Bills.Where(x => x.BillID == id).ToList();
+            return View(degerler);
+        }
 
     }
 }

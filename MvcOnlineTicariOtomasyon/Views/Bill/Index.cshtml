@@ -14,6 +14,7 @@
         <th>Total</th>
         <th>Submitter</th>
         <th>Receiver</th>
+        <th>Tax Administration</th>
         <th>Delete</th>
         <th>Update</th>
     </tr>
@@ -25,11 +26,12 @@
             <td>@k.Total</td>
             <td>@k.BillSubmitter</td>
             <td>@k.BillReceiver</td>
+            <td>@k.BillTaxAdministration</td>
             <td>
-                <a href="/Product/ProductDelete/@k.BillID" class=" btn btn-danger">Delete</a>
+                <a href="/Bill/BillBring/@k.BillID" class=" btn btn-danger">Update</a>
             </td>
             <td>
-                <a href="/Product/ProductBring/@k.BillID" class=" btn btn-warning">Update</a>
+                <a href="/Bill/BillDetail/@k.BillID" class=" btn btn-warning">Details</a>
             </td>
 
         </tr>

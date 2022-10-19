@@ -24,7 +24,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         //-------------------------------------------------------------------------
 
         //Fatura ve FaturaKalem arasında ilişki kurucaz. Yani Bills ve Bill_Item. Bir faturanın birden fazla kalemi olabilir. Bu yüzden Bills den araç ürettik.
-        public Bills Bills { get; set; }
+        public int BillID { get; set; } 
+        public virtual Bills Bills { get; set; }
 
     }
 }
