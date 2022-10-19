@@ -82,18 +82,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger = c.SalesMovements.Find(id);
             return View("SalesMovementBring", deger);
         }
-        public ActionResult SalesMovementUpdate (SalesMovement p)
+        public ActionResult SalesMovementUpdate (SalesMovement a)
         {
-            var deger = c.SalesMovements.Find(p.SalesMovement_SalesID);
-            deger.CurrentID = p.CurrentID;
-            deger.SalesMovement_Piece = p.SalesMovement_Piece;
-            deger.SalesMovement_Price = p.SalesMovement_Price;
-            deger.EmployeeID = p.EmployeeID;
-            deger.SalesMovement_Date = p.SalesMovement_Date;
-            deger.SalesMovement_TotalAmount = p.SalesMovement_TotalAmount;
-            deger.ProductID = p.ProductID;
+            var deger = c.SalesMovements.Find(a.SalesMovement_SalesID);
+            deger.ProductID = a.ProductID;
+            deger.CurrentID = a.CurrentID;
+            deger.EmployeeID = a.EmployeeID;
+            deger.SalesMovement_Piece = a.SalesMovement_Piece;
+            deger.SalesMovement_Price = a.SalesMovement_Price;
+            deger.SalesMovement_TotalAmount = a.SalesMovement_TotalAmount;
+            deger.SalesMovement_Date = a.SalesMovement_Date;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult SalesMovementDetails(int id)
+        {
+            var degerler = c.SalesMovements.Where(x => x.SalesMovement_SalesID == id).ToList();
+            return View(degerler);
         }
 
 

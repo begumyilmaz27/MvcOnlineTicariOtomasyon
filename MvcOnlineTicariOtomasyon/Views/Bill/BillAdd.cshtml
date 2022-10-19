@@ -1,0 +1,38 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Bills
+@{
+    ViewBag.Title = "BillAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Bill Page</h2>
+<br />
+@using (Html.BeginForm("BillAdd", "Bill", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.BillSerialNumber)
+        @Html.TextBoxFor(x => x.BillSerialNumber, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillSıraNumber)
+        @Html.TextBoxFor(x => x.BillSıraNumber, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillDate)
+        @Html.TextBoxFor(x => x.BillDate, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillHour)
+        @Html.TextBoxFor(x => x.BillHour, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillTaxAdministration)
+        @Html.TextBoxFor(x => x.BillTaxAdministration, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillSubmitter)
+        @Html.TextBoxFor(x => x.BillSubmitter, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BillReceiver)
+        @Html.TextBoxFor(x => x.BillReceiver, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Save</button>
+    </form>
+
+}
+

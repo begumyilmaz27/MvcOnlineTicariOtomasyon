@@ -1,0 +1,40 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Bills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+
+        <th>Serial Number</th>
+        <th>Date and Hour</th>
+        <th>Total</th>
+        <th>Submitter</th>
+        <th>Receiver</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>            
+            <td>@k.BillSerialNumber @k.BillSıraNumber</td>         
+            <td>@k.BillDate @k.BillHour</td>
+            <td>@k.Total</td>
+            <td>@k.BillSubmitter</td>
+            <td>@k.BillReceiver</td>
+            <td>
+                <a href="/Product/ProductDelete/@k.BillID" class=" btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <a href="/Product/ProductBring/@k.BillID" class=" btn btn-warning">Update</a>
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+<a href="/Bill/BillAdd/" class="btn btn-info">New Bill Entry</a>
+

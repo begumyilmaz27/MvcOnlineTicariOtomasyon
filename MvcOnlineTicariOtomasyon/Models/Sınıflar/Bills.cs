@@ -32,8 +32,15 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(30)]
         public string BillSubmitter { get; set; }
 
-        public DateTime BillHour { get; set; }
         public DateTime BillDate { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string BillHour { get; set; }
+        
+
+        //ToplamTutar için
+        public decimal Total { get; set; }
 
 
         //-------------------------------------------------------------------------
