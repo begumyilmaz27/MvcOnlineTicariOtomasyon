@@ -50,9 +50,27 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult BillDetail(int id)
         {
-            var degerler = c.Bills.Where(x => x.BillID == id).ToList();
+            var degerler = c.Bill_Items.Where(x => x.BillID == id).ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult NewBill_Item()
+        {
+            return View();
+        }
+        public ActionResult NewBill_Item(Bill_Item p)
+        {
+            c.Bill_Items.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
+
+
 
     }
 }
