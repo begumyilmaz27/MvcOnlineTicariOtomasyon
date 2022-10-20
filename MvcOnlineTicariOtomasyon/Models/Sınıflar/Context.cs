@@ -18,6 +18,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public DbSet<Expense> Expenses{ get; set; }
         public DbSet<Product> Products{ get; set; }
         public DbSet<SalesMovement> SalesMovements{ get; set; }
+        public DbSet<Detail> Details{ get; set; }
 
     }
 }
