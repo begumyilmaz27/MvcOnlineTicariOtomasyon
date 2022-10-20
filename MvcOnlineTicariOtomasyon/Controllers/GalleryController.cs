@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
     public class GalleryController : Controller
     {
         // GET: Gallery
+        Context c=new Context();
         public ActionResult Index()
         {
-            return View();
+            var degerler = c.Products.ToList();
+            return View(degerler);
         }
     }
 }
