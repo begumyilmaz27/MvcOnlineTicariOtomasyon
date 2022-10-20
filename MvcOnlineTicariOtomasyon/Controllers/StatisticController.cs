@@ -67,7 +67,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View();
         }
 
+        public ActionResult SimpleTables()
+        {
+            //ClassGroup da yazdığımız 2 property için Action oluşturuyoruz burada
 
+            var sorgu = from x in c.Currents  //cariler içinde seç dedik
+                        group x by x.CurrentCity into g //City'ye göre gruplandır ve g diye oluşturduğumuz soyut değer içine gönder dedik
+                        select new ClassGroup //Burası önemli; anonymous type kullandığımız için sınıf adını yazmak zorundayız
+                        {
+                            City = g.Key,   //
+                            Number = g.Count()
+                        };
+            return View(sorgu.ToList());
+        }
 
 
 
