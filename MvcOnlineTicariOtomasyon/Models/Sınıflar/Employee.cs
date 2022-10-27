@@ -12,14 +12,17 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Key]
         public int EmployeeID { get; set; }
 
+        [Display(Name = "Employee Name")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string EmployeeName { get; set; }
 
+        [Display(Name = "Employee Surname")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string EmployeeSurname { get; set; }
 
+        [Display(Name = "Image")]
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string EmployeeImage { get; set; }

@@ -19,6 +19,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public DbSet<Product> Products{ get; set; }
         public DbSet<SalesMovement> SalesMovements{ get; set; }
         public DbSet<Detail> Details{ get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }   
+
 
     }
 }

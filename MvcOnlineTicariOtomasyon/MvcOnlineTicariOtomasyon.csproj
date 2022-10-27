@@ -137,6 +137,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\SalesMovementController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\ToDoListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +158,7 @@
     <Compile Include="Models\Sınıflar\Expense.cs" />
     <Compile Include="Models\Sınıflar\Product.cs" />
     <Compile Include="Models\Sınıflar\SalesMovement.cs" />
+    <Compile Include="Models\Sınıflar\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2821,6 +2823,8 @@
     <Content Include="Views\Statistic\Partial2.cshtml" />
     <Content Include="Views\Statistic\Partial3.cshtml" />
     <Content Include="Views\Statistic\Partial4.cshtml" />
+    <Content Include="Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Views\ToDoList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
