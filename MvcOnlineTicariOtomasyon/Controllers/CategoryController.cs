@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Sınıflar;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -11,9 +13,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Category
         Context c=new Context();   //Contextten ürettiğimiz C nesnesi 
-        public ActionResult Index()
+        public ActionResult Index(int page=1) //Paged paketi ekledikten sonra projeye listeleme işlemini Index'de gerçekleştireceğiz için page isminde değişken oluşturduk. 1 dedik; kaç dersek listekeme işlemi oradan başlar.
         {
-            var degerler = c.Categories.ToList();
+            var degerler = c.Categories.ToList().ToPagedList(page,4); 
+                //ToPagedLİst iki tane parametre alıyor başlangıç parametresi ve size. Size kısmı genelde 10 yada 12 olacak şekilde kullanılır.
             return View(degerler);
         }
 

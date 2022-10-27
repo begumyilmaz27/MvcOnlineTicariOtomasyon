@@ -34,39 +34,39 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public ActionResult CariLogin1(Current p)
-        //{
-        //    var bilgiler = c.Currents.FirstOrDefault(x => x.CurrentMail == p.CurrentMail && x.CariSifre == p.CariSifre);
-        //    if (bilgiler != null)
-        //    {
-        //        FormsAuthentication.SetAuthCookie(bilgiler.CurrentMail, false);
-        //        Session["CurrentMail"] = bilgiler.CurrentMail.ToString();
-        //        return RedirectToAction("Index", "CariPanel");
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Index", "Login");
-        //    }
-        //}
-        //[HttpGet]
-        //public ActionResult AdminLogin()
-        //{
-        //    return View();
-        //}
-        //public ActionResult AdminLogin(Admin p)
-        //{
-        //    var bilgiler = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
-        //    if (bilgiler != null)
-        //    {
-        //        FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd, false);
-        //        Session["KullaniciAd"] = bilgiler.KullaniciAd.ToString();
-        //        return RedirectToAction("Index", "Kategori");
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Index", "Login");
-        //    }
-        //}
+        [HttpPost]
+        public ActionResult CurrentLogin1(Current p)
+        {
+            var bilgiler = c.Currents.FirstOrDefault(x => x.CurrentMail == p.CurrentMail && x.CurrentPassword == p.CurrentPassword);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.CurrentMail, false);
+                Session["CurrentMail"] = bilgiler.CurrentMail.ToString();
+                return RedirectToAction("Index", "CurrentPanel"); //beni CurrentPanel'in Index aksiyonuna yönlendir
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login"); //Yanlışsa baştaki Login sayfasına gönder
+            }
+        }
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        public ActionResult AdminLogin(Admin p) //parantez içine parametre yolluyoruz Admin tablosundan
+        {
+            var bilgiler = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.AdminUserName, false);
+                Session["AdminUserName"] = bilgiler.AdminUserName.ToString();
+                return RedirectToAction("Index", "Category");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
     }
 }

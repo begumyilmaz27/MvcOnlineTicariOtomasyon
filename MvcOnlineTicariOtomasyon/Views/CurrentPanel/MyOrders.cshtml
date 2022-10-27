@@ -1,0 +1,25 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "MyOrders";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+<br />
+<h2>My Order History</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Products.ProductName</td>
+            <td>@x.SalesMovement_Price</td>
+            <td>@Convert.ToDateTime(x.SalesMovement_Date).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+

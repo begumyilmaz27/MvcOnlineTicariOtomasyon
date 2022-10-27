@@ -12,10 +12,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Product
         Context c = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)  //Index içine yazdığımız Product Name:@Html.TextBox("p") kodundaki parantez içindeki p değişkenini burada tanımladık.
         {
-            var products = c.Products.Where(x=>x.ProductSituation==true).ToList();
-            return View(products);
+            var urunler = from x in c.Products select x; //x'i ürünler içinden alacaksın ve x'i seçeceksin
+            if (!string.IsNullOrEmpty(p))     //eğer göndermiş olduğum parametre boş değilse ya da null değilse aşağıdakini yapacaskın
+            {
+                urunler = urunler.Where(y => y.ProductName.Contains(p));  //Urun adında P'de yazdığımız değişkeni içeriden değeri urunler yazdığımız değişkenin içine atayacak.
+            }
+            return View(urunler.ToList());
         }
         [HttpGet]
         public ActionResult NewProduct()

@@ -15,30 +15,44 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            //var mail = (string)Session["CariMail"];
+            var mail = (string)Session["CurrentMail"]; //CariMail'den gelen mail'i Session değeri olarak tutucam ve işlemleri CariMail'e göre yapıcam.
+
+            var degerler = c.Currents.FirstOrDefault(x => x.CurrentMail == mail);
+            ViewBag.m = mail;
+            return View(degerler);
+
             //var degerler = c.mesajlars.Where(x => x.Alici == mail).ToList();
-            //ViewBag.m = mail;
-            //var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault();
+
+
+            //var mailid = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
             //ViewBag.mid = mailid;
-            //var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
+            //var toplamsatis = c.SalesMovements.Where(x => x.CurrentID == mailid).Count();
             //ViewBag.toplamsatis = toplamsatis;
-            //var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            //var toplamtutar = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_TotalAmount);
             //ViewBag.toplamtutar = toplamtutar;
-            //var toplamurunsayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.Adet);
+            //var toplamurunsayisi = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_Piece);
             //ViewBag.toplamurunsayisi = toplamurunsayisi;
-            //var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            //var adsoyad = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
             //ViewBag.adsoyad = adsoyad;
 
-            return View(/*degerler*/);
+
         }
-        //[Authorize]
-        //public ActionResult Siparislerim()
-        //{
-        //    var mail = (string)Session["CariMail"];
-        //    var id = c.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.Cariid).FirstOrDefault();
-        //    var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
-        //    return View(degerler);
-        //}
+        [Authorize]
+        public ActionResult MyOrders() //Siparişlerim bölümü Browserdaki
+        {
+            var mail = (string)Session["CurrentMail"]; //CurrentMail e göre session değeri oluşturucaz. 
+            var id = c.Currents.Where(x => x.CurrentMail == mail.ToString()).Select(y => y.CurrentID).FirstOrDefault(); //Cariler içindeki x.CurrentMail diyerek mail adresi dışarıdan gelene (mail dediğimiz) eşit olanlar içinden CurrentID'ye göre al ve FirstOrDefault diyerek getir.
+            var degerler = c.SalesMovements.Where(x => x.CurrentID == id).ToList();
+            return View(degerler);
+
+            //1. kod; Sisteme giriş yapan mail adresini Session'a atadık.
+            //2. kod; ID isminde bir değişken oluşturduk ve sisteme giriş yapan MAİL adresinin ID'sini alan kodu yazdık
+            //3. SatışHareket tablosuna gittik. Getirdiğimiz ID, SatışHareket tablosundaki ID'ye eşit olanı bulan kodu yazdık ve listeledik
+            //4. Geriye döndür dedik. 
+        }
+
+
+
         //[Authorize]
         //public ActionResult GelenMesajlar()
         //{
@@ -93,7 +107,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         //    c.SaveChanges();
         //    return View();
         //}
-        //public ActionResult KargoTakip(string p)
+        //public ActionResult CargoTracking(string p)
         //{
         //    var k = from x in c.KargoDetays select x;
         //    k = k.Where(y => y.TakipKodu.Contains(p));

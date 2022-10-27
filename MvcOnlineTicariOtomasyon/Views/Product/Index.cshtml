@@ -5,29 +5,34 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+            {
+                <p>
+                    Product Name: @Html.TextBox("p")
+                    <input type="submit" value="Ara" />
+                </p>
+
+            }
+<br />
 <table class="table table-bordered">
-    <tr>
-        <th>ID</th>
+    <tr>        
         <th>Product</th>
         <th>Brand</th>
         <th>Stock</th>
         <th>Purchase Price</th>
         <th>Sale Price</th>
-        <th>Image</th>
         <th>Category</th>
         <th>Delete</th>
         <th>Update</th>
     </tr>
     @foreach (var u in Model)
     {
-        <tr>
-            <td>@u.ProductID</td>
+        <tr>            
             <td>@u.ProductName</td>
             <td>@u.ProductBrand</td>
             <td>@u.ProductStock</td>
-            <td>@u.ProductPurchasePrice</td>
-            <td>@u.ProductSalePrice</td>
-            <td>@u.ProductImage</td>
+            <td>@u.ProductPurchasePrice ₺</td>
+            <td>@u.ProductSalePrice ₺</td>
             <td>@u.Category.CategoryID</td>
             <td>
                 <a href="/Product/ProductDelete/@u.ProductID" class=" btn btn-danger">Delete</a>
