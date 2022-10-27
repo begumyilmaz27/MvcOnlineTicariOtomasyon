@@ -21,7 +21,10 @@
             <td>@k.EmployeeID</td>
             <td>@k.EmployeeName</td>
             <td>@k.EmployeeSurname</td>
-            <td>@k.EmployeeImage</td>
+            <td>
+                <img src="@k.EmployeeImage" style="width:100px; height:50px;" />
+
+            </td>
             <td>@k.Departman.DepartmanName</td>
             <td><a href="/Employee/EmployeeBring/@k.EmployeeID" class="btn btn-warning">Update</a></td>
             <td><a href="/Departman/DepartmanEmployeeSalesment/@k.EmployeeID" class="btn btn-success" style="background-color:burlywood">Details</a></td>

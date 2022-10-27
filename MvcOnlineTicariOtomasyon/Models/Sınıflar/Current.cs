@@ -33,6 +33,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [StringLength(50)]
         public string CurrentMail { get; set; }
 
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string CurrentPassword { get; set; }
+
         public bool CurrentSituation { get; set; }
 
         //----------------------------------------------------------------------
