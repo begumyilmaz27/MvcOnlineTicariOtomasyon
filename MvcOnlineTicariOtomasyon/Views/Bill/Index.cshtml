@@ -9,23 +9,19 @@
 <table class="table table-bordered">
     <tr>
 
-        <th>Serial Number</th>
+        <th>Serial and Sıra Number</th>
         <th>Date and Hour</th>
-        <th>Total</th>
-        <th>Submitter</th>
-        <th>Receiver</th>
-        <th>Tax Administration</th>
-        <th>Delete</th>
+        <th>Total</th>        
+        <th>Tax Administration</th>        
         <th>Update</th>
+        <th>New Bill Item</th>
     </tr>
     @foreach (var k in Model)
     {
-        <tr>            
-            <td>@k.BillSerialNumber @k.BillSıraNumber</td>         
+        <tr>
+            <td>@k.BillSerialNumber @k.BillSıraNumber</td>
             <td>@k.BillDate @k.BillHour</td>
-            <td>@k.Total</td>
-            <td>@k.BillSubmitter</td>
-            <td>@k.BillReceiver</td>
+            <td>@k.Total</td> 
             <td>@k.BillTaxAdministration</td>
             <td>
                 <a href="/Bill/BillBring/@k.BillID" class=" btn btn-danger">Update</a>
@@ -38,5 +34,36 @@
     }
 </table>
 <br />
-<a href="/Bill/BillAdd/" class="btn btn-info">New Bill Entry</a>
+<a href="/Bill/BillAdd/" class="btn btn-info" style="background-color:#b200ff">New Bill Entry</a>
+<br />
+<br />
+<button type="button" class="btn btn-warning" style="background-color:#0094ff; color:white" data-toggle="modal" data-target="#Modal1">Popup Page</button>
+
+<div class="modal" id="Modal1">                        @*modal1 i oluşturuyoruz.*@
+    <div class="modal-dialog">                         @*diyalog şeklinde olacak*@
+        <div class="modal-content">
+            <div class="modal-header">                 @*başlık kısmı*@
+                <h2 class="modal-title">Popup Diyalog Ekranı</h2>
+            </div>
+            <div class="modal-body">                  @*@işin gövde kısmı@*@  
+                <table class="table table-bordered">  @*kenarlıklı tablo kullanmak için*@
+                    <tr>
+                        <td>Serial Number</td>
+                        <td>Sıra Number</td>
+                        <td>Total</td>
+                    </tr>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.BillSerialNumber</td>
+                            <td>@x.BillSıraNumber</td>
+                            <td>@x.Total</td>
+                        </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
 

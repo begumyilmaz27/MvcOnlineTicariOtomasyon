@@ -63,6 +63,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d15 = deger15;
 
             var deger16 = c.SalesMovements.Where(x => x.SalesMovement_Date == bugun).Sum(y => (decimal?)y.SalesMovement_TotalAmount).ToString();
+            //eğer ki null dönerse bugün ki kasa hata dönmesin diye StackoverFlor da hoca (double?) yazılması gerektiğini bulmuş. Bizim değer decimal olduğu için (decimal?) yazdık.
             ViewBag.d16 = deger16;
             return View();
         }

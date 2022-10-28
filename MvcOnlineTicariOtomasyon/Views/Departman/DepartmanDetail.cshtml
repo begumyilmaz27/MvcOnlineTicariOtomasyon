@@ -11,20 +11,14 @@
         <li class="breadcrumb-item active">Departman's Name: @ViewBag.d</li>
     </ol>
     <table class="table table-hover">
-        <tr>
-            <th>Employee ID</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Image</th>
+        <tr>            
+            <th>Employee</th>                       
             <th>Sales</th>
         </tr>
         @foreach (var u in Model)
         {
-            <tr>
-                <td>@u.EmployeeID</td>
-                <td>@u.EmployeeName</td>
-                <td>@u.EmployeeSurname</td>
-                <td>@u.EmployeeImage</td>
+            <tr>                
+                <td>@u.EmployeeName @u.EmployeeSurname</td>                              
                 <td>
                     <a href="/Departman/DepartmanEmployeeSalesment/@u.EmployeeID" class="btn btn-danger" style="background-color:yellowgreen">Sales</a>
                 </td>
