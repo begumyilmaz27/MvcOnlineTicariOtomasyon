@@ -15,7 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context c=new Context();   //Contextten ürettiğimiz C nesnesi 
         public ActionResult Index(int page=1) //Paged paketi ekledikten sonra projeye listeleme işlemini Index'de gerçekleştireceğiz için page isminde değişken oluşturduk. 1 dedik; kaç dersek listekeme işlemi oradan başlar.
         {
-            var degerler = c.Categories.ToList().ToPagedList(page,4); 
+            var degerler = c.Categories.ToList().ToPagedList(page,5); 
                 //ToPagedLİst iki tane parametre alıyor başlangıç parametresi ve size. Size kısmı genelde 10 yada 12 olacak şekilde kullanılır.
             return View(degerler);
         }
