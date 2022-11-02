@@ -81,6 +81,35 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
 
+        //Tıpki yeni bir şey ekleme işleminde olduğu gibi bir yapı kullanıyoru aşağıdaki SatışYapda. 
+
+        [HttpGet]
+        public ActionResult MakeaSale(int id)
+        {
+            List<SelectListItem> deger3 = (from x in c.Employees.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.EmployeeName + " " + x.EmployeeSurname,
+                                               Value = x.EmployeeID.ToString()
+                                           }).ToList();
+
+            ViewBag.dgr3 = deger3;
+
+            var deger1 = c.Products.Find(id); //deger1 ile ürün tablosundan gelen ID'yi bulduk
+            ViewBag.dgr1 = deger1.ProductID;  //ViewBag ile gelen Id'yi aldık
+
+            ViewBag.dgr2 = deger1.ProductSalePrice;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MakeaSale(SalesMovement p)
+        {
+            p.SalesMovement_Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.SalesMovements.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index", "Satis");
+        }
+
 
 
 

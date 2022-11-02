@@ -1,0 +1,44 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.SalesMovement
+@{
+    ViewBag.Title = "MakeaSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Make a Sale</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ProductID)
+    <input type="text" name="Urunid" value="@ViewBag.dgr1" class="form-control" readonly />
+    <br />
+    @Html.LabelFor(x => x.EmployeeID)
+    @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CurrentID)
+    @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SalesMovement_Piece)
+    <input type="number" class="form-control" max="10" min="0" placeholder="adet girin" id="txt1" onchange="sum();" name="Adet" />
+    <br />
+    @Html.LabelFor(x => x.SalesMovement_Price)
+    <input type="text" name="Fiyat" value="@ViewBag.dgr2" class="form-control" id="txt2" onkeyup="sum();" />
+    <br />
+    @Html.LabelFor(x => x.SalesMovement_TotalAmount)
+    <input type="text" name="ToplamTutar" value="0" class="form-control" id="txt3" readonly />
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+</form>
+<br />
+<input type="text" id="txt1" onkeyup="sum();" />    @*onkeyup textbox içine klavyeden girilen değeri al demek*@
+<input type="text" id="txt2" onkeyup="sum();" />
+<input type="text" id="txt3" onkeyup="sum();" />
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;   //sayfa içindeki txt1 içindeki değeri alacaksın demek document.getElementById
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {                                 //isNaN boşluktan farklıysa anlamına geliyor
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>

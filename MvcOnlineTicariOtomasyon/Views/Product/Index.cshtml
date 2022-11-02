@@ -24,10 +24,11 @@
         <th>Category</th>
         <th>Delete</th>
         <th>Update</th>
+        <th>Make a Sale</th>
     </tr>
     @foreach (var u in Model)
     {
-        <tr>            
+        <tr>
             <td>@u.ProductName</td>
             <td>@u.ProductBrand</td>
             <td>@u.ProductStock</td>
@@ -40,7 +41,10 @@
             <td>
                 <a href="/Product/ProductBring/@u.ProductID" class=" btn btn-warning">Update</a>
             </td>
-            
+            <td>
+                <a href="/Product/MakeaSale/@u.ProductID" class=" btn btn-warning" style="background-color:coral">MakeSale</a>
+            </td>
+
         </tr>
     }
 </table>
