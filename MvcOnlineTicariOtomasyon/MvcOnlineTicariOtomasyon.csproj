@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\Bill_ItemController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\CurrentPanelController.cs" />
@@ -153,6 +154,8 @@
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Bills.cs" />
     <Compile Include="Models\Sınıflar\Bill_Item.cs" />
+    <Compile Include="Models\Sınıflar\CargoDetail.cs" />
+    <Compile Include="Models\Sınıflar\CargoTracking.cs" />
     <Compile Include="Models\Sınıflar\Category.cs" />
     <Compile Include="Models\Sınıflar\Class1.cs" />
     <Compile Include="Models\Sınıflar\Class2.cs" />
@@ -2889,6 +2892,9 @@
     <Content Include="Views\CurrentPanel\Index.cshtml" />
     <Content Include="Views\CurrentPanel\MyOrders.cshtml" />
     <Content Include="Views\Product\MakeaSale.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cargo\NewCargo.cshtml" />
+    <Content Include="Views\Cargo\CargoTracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

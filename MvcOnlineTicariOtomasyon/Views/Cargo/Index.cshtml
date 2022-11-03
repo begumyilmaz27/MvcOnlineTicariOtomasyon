@@ -1,0 +1,37 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<CargoDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+{
+    <p>
+        Cargo Tracking Code: @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Employee</th>
+        <th>Receiver</th>
+        <th>TrackingCode</th>
+        <th>Date</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Employee</td>
+            <td>@k.Receiver</td>
+            <td>@k.TrackingCode</td>
+            <td>@k.Date</td>
+            <td><a href="/Cargo/CargoTracking/@k.TrackingCode" class="btn btn-default" style="background-color:lightcoral; color:white">Detail</a></td>
+        </tr>
+    }
+</table>
+<a href="/Cargo/NewCargo" class="btn btn-info">New Cargo Entry</a>
+

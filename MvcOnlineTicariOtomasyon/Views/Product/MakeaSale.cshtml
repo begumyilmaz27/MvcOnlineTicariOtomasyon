@@ -17,27 +17,25 @@
     @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.SalesMovement_Piece)
-    <input type="number" class="form-control" max="10" min="0" placeholder="adet girin" id="txt1" onchange="sum();" name="Adet" />
+    <input type="number" class="form-control" max="10" min="0" placeholder="Piece" id="txt1" onchange="sum();" name="Piece" />
+    @*onchange demek bir şey değişti zaman sum metodunun devreye girmesini sağlayacak*@
     <br />
     @Html.LabelFor(x => x.SalesMovement_Price)
-    <input type="text" name="Fiyat" value="@ViewBag.dgr2" class="form-control" id="txt2" onkeyup="sum();" />
+    <input type="text" name="Price" value="@ViewBag.dgr2" class="form-control" id="txt2" onkeyup="sum();" />
+    @*onkeyup textbox içine klavyeden girilen değeri al demek*@
     <br />
     @Html.LabelFor(x => x.SalesMovement_TotalAmount)
-    <input type="text" name="ToplamTutar" value="0" class="form-control" id="txt3" readonly />
-    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <input type="text" name="Total Amount" value="0" class="form-control" id="txt3" readonly />
     <br />
-    <button class="btn btn-primary">Satış Yap</button>
+    <button class="btn btn-primary">Make a Sale</button>
 </form>
 <br />
-<input type="text" id="txt1" onkeyup="sum();" />    @*onkeyup textbox içine klavyeden girilen değeri al demek*@
-<input type="text" id="txt2" onkeyup="sum();" />
-<input type="text" id="txt3" onkeyup="sum();" />
 <script>
     function sum() {
-        var sayi1 = document.getElementById('txt1').value;   //sayfa içindeki txt1 içindeki değeri alacaksın demek document.getElementById
+        var sayi1 = document.getElementById('txt1').value;   /*//sayfa içindeki txt1 içindeki değeri alacaksın demek document.getElementById*/
         var sayi2 = document.getElementById('txt2').value;
         var sonuc = parseInt(sayi1) * parseInt(sayi2);
-        if (!isNaN(sonuc)) {                                 //isNaN boşluktan farklıysa anlamına geliyor
+        if (!isNaN(sonuc)) {                                 /*//isNaN boşluktan farklıysa anlamına geliyor*/
             document.getElementById('txt3').value = sonuc;
         }
     }

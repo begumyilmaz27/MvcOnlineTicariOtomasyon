@@ -106,16 +106,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             p.SalesMovement_Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             c.SalesMovements.Add(p);
-            c.SaveChanges();
-            return RedirectToAction("Index", "Satis");
+            c.SaveChanges();           
+
+            return RedirectToAction("Index", "SalesMovement");
         }
-
-
-
-
-
-
-
-
     }
 }

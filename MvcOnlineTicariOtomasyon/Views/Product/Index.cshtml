@@ -9,7 +9,7 @@
             {
                 <p>
                     Product Name: @Html.TextBox("p")
-                    <input type="submit" value="Ara" />
+                    <input type="submit" value="Search" />
                 </p>
 
             }
@@ -24,7 +24,7 @@
         <th>Category</th>
         <th>Delete</th>
         <th>Update</th>
-        <th>Make a Sale</th>
+        <th>MakeaSale</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -42,7 +42,7 @@
                 <a href="/Product/ProductBring/@u.ProductID" class=" btn btn-warning">Update</a>
             </td>
             <td>
-                <a href="/Product/MakeaSale/@u.ProductID" class=" btn btn-warning" style="background-color:coral">MakeSale</a>
+                <a href="/Product/MakeaSale/@u.ProductID" class=" btn btn-warning" style="background-color:coral">MakeaSale</a>
             </td>
 
         </tr>
