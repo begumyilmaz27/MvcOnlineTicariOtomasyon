@@ -30,6 +30,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         public string Receiver { get; set; }
         //receiver: alıcı demek
 
-        public DateTime Date { get; set; }
+        public DateTime Tarih { get; set; }
     }
 }

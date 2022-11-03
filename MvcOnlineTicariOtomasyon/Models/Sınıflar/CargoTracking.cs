@@ -23,6 +23,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(100)]
         public string Description { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime TarihZaman { get; set; }
     }
 }

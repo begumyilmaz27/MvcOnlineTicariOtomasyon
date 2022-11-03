@@ -10,7 +10,7 @@
 <br />
 <form class="form-group" method="post">
     @Html.LabelFor(x => x.TrackingCode)
-    <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TakipKodu" />
+    <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TrackingCode" />
     <br />
     @Html.LabelFor(x => x.Employee)
     @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
@@ -18,7 +18,7 @@
     @Html.LabelFor(x => x.Receiver)
     @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Date)
+    @Html.LabelFor(x => x.Tarih)
     <input class="form-control" type="date" name="Tarih" />
     <br />
     @Html.LabelFor(x => x.Description)
