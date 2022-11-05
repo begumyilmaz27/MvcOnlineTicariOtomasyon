@@ -58,6 +58,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CurrentMail"];
             var mesajlar = c.Messages.Where(x => x.Receiver == mail).OrderByDescending(x => x.MesajID).ToList();
+                //where şartı ile alıcı kısmında mail değişkenine eşit olanları ToList yapacak.
             var gelensayisi = c.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.Messages.Count(x => x.Sender == mail).ToString();
@@ -86,6 +87,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);
         }
+
         [Authorize]
         [HttpGet]
         public ActionResult NewMessage()

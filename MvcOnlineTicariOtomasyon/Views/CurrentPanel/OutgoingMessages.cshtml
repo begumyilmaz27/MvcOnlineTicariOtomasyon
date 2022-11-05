@@ -1,7 +1,7 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
 @model List<Message>
 @{
-    ViewBag.Title = "IncomingMessages";
+    ViewBag.Title = "OutgoingMessages";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
 }
 
@@ -178,7 +178,7 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/CurrentPanel/MessageDetail/@x.MesajID">@x.Sender</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@x.Receiver</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@x.Subject</b> - @x.Contents.Substring(0, 40).ToString()...
                                             </td>
@@ -273,5 +273,7 @@ $(function () {
     <script src="../../dist/js/demo.js"></script>
 </body>
 </html>
+
+
 
 
