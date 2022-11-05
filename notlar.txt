@@ -30,6 +30,11 @@
 //Top Seller=En Çok Satan
 //Critical Level Products=Kritik Seviyedeki Ürünler
 //Product Purchase Price = Ürün Satýn Alma Fiyatý
+//IncomingMessages= Gelen Mesajlar
+//Outgoing Messages= Giden Mesajlar
+//Receiver=Alýcý
+//Sender=Gönderici
+//drafts=taslaklar
 
 //char yazdýðýmýzda Tek karakter olarak tutacaðýz
 //string olan deðiþkeni veri tabýnýnda nvarchar(max) olarak tutuyor çok bellek tutuyor.

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{
+    var grafik = new Chart(width: 500, height: 500);  /*boyutunu veriyoruz burada*/
+    grafik.AddTitle(text: "Categories and Number of Products");
+    grafik.AddLegend(title: "Values");  /*başlık kısmı*/
+
+    grafik.AddSeries(
+        name: "Data",
+        chartType: "Bar",
+        xValue: new[] { "Beyaz Eşya", "Televizyon", "Bilgisayar", "Küçük Ev Aletleri" },
+        yValues: new[] { 500, 250, 340, 620 }
+
+        //addseries kısmı serilerden geliyor grafiğin x ve y koordinatlarını tarif ediyor. name ve charttype diyerek bu kısımları belirttik
+
+        );
+    grafik.Write();
+}

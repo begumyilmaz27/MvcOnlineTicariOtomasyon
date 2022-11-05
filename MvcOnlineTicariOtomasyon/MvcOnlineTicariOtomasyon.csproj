@@ -143,8 +143,10 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\QRController.cs" />
@@ -171,8 +173,11 @@
     <Compile Include="Models\Sınıflar\Detail.cs" />
     <Compile Include="Models\Sınıflar\Employee.cs" />
     <Compile Include="Models\Sınıflar\Expense.cs" />
+    <Compile Include="Models\Sınıflar\Message.cs" />
     <Compile Include="Models\Sınıflar\Product.cs" />
     <Compile Include="Models\Sınıflar\SalesMovement.cs" />
+    <Compile Include="Models\Sınıflar\Sinif1.cs" />
+    <Compile Include="Models\Sınıflar\Sinif2.cs" />
     <Compile Include="Models\Sınıflar\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2900,9 +2905,16 @@
     <Content Include="Views\Cargo\NewCargo.cshtml" />
     <Content Include="Views\Cargo\CargoTracking.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Graphic\Index2.cshtml" />
+    <Content Include="Views\Graphic\Index3.cshtml" />
+    <Content Include="Views\Graphic\Index4.cshtml" />
+    <Content Include="Views\Graphic\Index5.cshtml" />
+    <Content Include="Views\CurrentPanel\IncomingMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

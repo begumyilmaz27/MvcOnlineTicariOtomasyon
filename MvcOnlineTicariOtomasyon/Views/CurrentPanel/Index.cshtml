@@ -1,4 +1,5 @@
-﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.Current
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<Message>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
@@ -65,7 +66,7 @@
                                         <b>Toplam Ürün Sayısı:</b> <a class="float-right">@ViewBag.toplamurunsayisi</a>
                                     </li>
                                 </ul>
-                                <a href="/CariPanel/KargoTakip/" class="btn btn-primary btn-block"><b>Kargo Takip</b></a>
+                                <a href="/CurrentPanel/CargoTracking/" class="btn btn-primary btn-block"><b>Kargo Takip</b></a>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -115,14 +116,14 @@
                                                 <div class="user-block">
                                                     <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/2.png" alt="user image">
                                                     <span class="username">
-                                                        <a href="#">@x.Gonderici</a>
+                                                        <a href="#">@x.Sender</a>
                                                         <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
                                                     </span>
-                                                    <span class="description">@x.Konu - @x.Tarih.ToShortDateString()</span>
+                                                    <span class="description">@x.Subject - @x.Date.ToShortDateString()</span>
                                                 </div>
                                                 <!-- /.user-block -->
                                                 <p>
-                                                    @x.icerik.
+                                                    @x.Contents.
                                                 </p>
                                             </div>
                                         }
@@ -131,11 +132,11 @@
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane" id="timeline">
                                         <!-- The timeline -->
-                                        @Html.Action("Partial2", "CariPanel")
+                                        @Html.Action("Partial2", "CurrentMail")
                                     </div>
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane" id="settings">
-                                        @Html.Action("Partial1", "CariPanel")
+                                        @Html.Action("Partial1", "CurrentMail")
                                     </div>
                                     <!-- /.tab-pane -->
                                 </div>
