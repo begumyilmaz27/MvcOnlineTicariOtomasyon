@@ -15,32 +15,41 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var mail = (string)Session["CurrentMail"]; //CariMail'den gelen mail'i Session değeri olarak tutucam ve işlemleri CariMail'e göre yapıcam.
+            //CariMail'den gelen mail'i Session değeri olarak tutucam ve işlemleri CariMail'e göre yapıcam.
 
-            var degerler = c.Currents.FirstOrDefault(x => x.CurrentMail == mail);
+            var mail = (string)Session["CurrentMail"];
+            var degerler = c.Messages.Where(x => x.Receiver == mail).ToList();
             ViewBag.m = mail;
+
+            //örneğin 1 numaralı ID sisteme giriş yaptı ve yaptığı satış hareketi görmek istiyor. 1 numaralı ID'ye ulaşmamızı sağlayan sorgu;
+            var mailid = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
+            ViewBag.mid = mailid;
+
+            //Toplamda kaç farklı satış yapılmışi?
+            var toplamsatis = c.SalesMovements.Where(x => x.CurrentID == mailid).Count();
+            ViewBag.toplamsatis = toplamsatis;
+            //Satış Harekette CariID'nin toplam ne kadar satış yapacağını bulacağız
+            var toplamtutar = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_TotalAmount);
+            ViewBag.toplamtutar = toplamtutar;
+            //Toplam Urun Sayısını bulacağız
+            var toplamurunsayisi = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_Piece);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
+            //Ad-Soyadı listeleyeceğız Index kısmında Foreach dönhüsü ile. 
+            var adsoyad = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+
             return View(degerler);
 
-            //var degerler = c.mesajlars.Where(x => x.Alici == mail).ToList();
-
-
-            //var mailid = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
-            //ViewBag.mid = mailid;
-            //var toplamsatis = c.SalesMovements.Where(x => x.CurrentID == mailid).Count();
-            //ViewBag.toplamsatis = toplamsatis;
-            //var toplamtutar = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_TotalAmount);
-            //ViewBag.toplamtutar = toplamtutar;
-            //var toplamurunsayisi = c.SalesMovements.Where(x => x.CurrentID == mailid).Sum(y => y.SalesMovement_Piece);
-            //ViewBag.toplamurunsayisi = toplamurunsayisi;
-            //var adsoyad = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
-            //ViewBag.adsoyad = adsoyad;
         }
 
         [Authorize]
         public ActionResult MyOrders() //Siparişlerim bölümü Browserdaki
         {
             var mail = (string)Session["CurrentMail"]; //CurrentMail e göre session değeri oluşturucaz. 
-            var id = c.Currents.Where(x => x.CurrentMail == mail.ToString()).Select(y => y.CurrentID).FirstOrDefault(); //Cariler içindeki x.CurrentMail diyerek mail adresi dışarıdan gelene (mail dediğimiz) eşit olanlar içinden CurrentID'ye göre al ve FirstOrDefault diyerek getir.
+            var id = c.Currents.Where(x => x.CurrentMail == mail.ToString()).Select(y => y.CurrentID).FirstOrDefault(); 
+            
+            //Cariler içindeki x.CurrentMail diyerek mail adresi dışarıdan gelene (mail dediğimiz) eşit olanlar içinden CurrentID'ye göre al ve FirstOrDefault diyerek getir.
+
             var degerler = c.SalesMovements.Where(x => x.CurrentID == id).ToList();
             return View(degerler);
 
@@ -54,7 +63,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CurrentMail"];
             var mesajlar = c.Messages.Where(x => x.Receiver == mail).OrderByDescending(x => x.MesajID).ToList();
+
                 //where şartı ile alıcı kısmında mail değişkenine eşit olanları ToList yapacak.
+
             var gelensayisi = c.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.Messages.Count(x => x.Sender == mail).ToString();

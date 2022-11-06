@@ -59,7 +59,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult CustomerSales(int id)
         {
             var degerler = c.SalesMovements.Where(x => x.CurrentID == id).ToList();
-            var cr=c.Currents.Where(x => x.CurrentID == id).ToList().Select(y => y.CurrentName+" " + y.CurrentSurname).FirstOrDefault();
+            var cr=c.Currents.Where(x => x.CurrentID == id).ToList().Select(y => y.CurrentName+" " + y.CurrentSurname).ToList();
             ViewBag.current = cr;
             return View(degerler);
         }
