@@ -34,9 +34,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             //ViewBag.toplamurunsayisi = toplamurunsayisi;
             //var adsoyad = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
             //ViewBag.adsoyad = adsoyad;
-
-
         }
+
         [Authorize]
         public ActionResult MyOrders() //Siparişlerim bölümü Browserdaki
         {
@@ -50,9 +49,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             //3. SatışHareket tablosuna gittik. Getirdiğimiz ID, SatışHareket tablosundaki ID'ye eşit olanı bulan kodu yazdık ve listeledik
             //4. Geriye döndür dedik. 
         }
-
-
-
         [Authorize]
         public ActionResult IncomingMessages()
         {
@@ -97,36 +93,41 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d1 = gelensayisi;
             var gidensayisi = c.Messages.Count(x => x.Sender == mail).ToString();
             ViewBag.d2 = gidensayisi;
+
             return View();
         }
         [HttpPost]
         public ActionResult NewMessage(Message m)
         {
             var mail = (string)Session["CurrentMail"];
-            m.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+            m.Date = DateTime.Parse(DateTime.Now.ToShortDateString()); 
+            //yukarı mesajlardan ürettiğimiz m parametresi mesajlar tablosunda (SQL tarafındaki ) yer alan Date sütununa ya ad C#'daki karşılığı ile property'sine  kısa tarih formatında atama gerçekleştirdik. 
+
             m.Sender = mail;
-            c.Messages.Add(m);
+
+            c.Messages.Add(m); //Context sınıfından ürettiğimiz c nesnesine m parametresinden gelen değeri ekleyeceksin
             c.SaveChanges();
             return View();
         }
-        //public ActionResult CargoTracking(string p)
-        //{
-        //    var k = from x in c.KargoDetays select x;
-        //    k = k.Where(y => y.TakipKodu.Contains(p));
-        //    return View(k.ToList());
-        //}
+        public ActionResult CargoTracking(string p)
+        {
+            var k = from x in c.CargoDetails select x;
+            k = k.Where(y => y.TrackingCode.Contains(p));
+            return View(k.ToList());
+        }
 
-        //public ActionResult CariKargoTakip(string id)
-        //{
-        //    var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
-        //    return View(degerler);
-        //}
-        //public ActionResult LogOut()
-        //{
-        //    FormsAuthentication.SignOut();
-        //    Session.Abandon();
-        //    return RedirectToAction("Index", "Login");
-        //}
+        public ActionResult CurrentCargoTracking(string id)
+        {
+            var degerler = c.CargoTrackings.Where(x => x.TrackingCode == id).ToList();
+            return View(degerler);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut(); //çıkış yap
+            Session.Abandon(); //istekleri terk et
+            return RedirectToAction("Index", "Login");
+        }
         //public PartialViewResult Partial1()
         //{
         //    var mail = (string)Session["CariMail"];
