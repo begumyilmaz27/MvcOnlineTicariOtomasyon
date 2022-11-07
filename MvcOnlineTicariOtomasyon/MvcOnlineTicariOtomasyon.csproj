@@ -141,6 +141,7 @@
     <Compile Include="Controllers\CurrentPanelController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\GraphicController.cs" />
@@ -2916,6 +2917,9 @@
     <Content Include="Views\CurrentPanel\NewMessage.cshtml" />
     <Content Include="Views\CurrentPanel\CargoTracking.cshtml" />
     <Content Include="Views\CurrentPanel\CurrentCargoTracking.cshtml" />
+    <Content Include="Views\CurrentPanel\Partial1.cshtml" />
+    <Content Include="Views\CurrentPanel\Partial2.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

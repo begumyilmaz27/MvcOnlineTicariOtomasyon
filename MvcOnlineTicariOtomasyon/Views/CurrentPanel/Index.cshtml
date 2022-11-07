@@ -57,16 +57,16 @@
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Toplam Satış:</b> <a class="float-right">@ViewBag.toplamsatis</a>
+                                        <b>Total Sales:</b> <a class="float-right">@ViewBag.toplamsatis</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Toplam Satış Tutarı:</b> <a class="float-right">@ViewBag.toplamtutar ₺</a>
+                                        <b>Total Sales Amount:</b> <a class="float-right">@ViewBag.toplamtutar ₺</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Toplam Ürün Sayısı:</b> <a class="float-right">@ViewBag.toplamurunsayisi</a>
+                                        <b>Total Number of Products:</b> <a class="float-right">@ViewBag.toplamurunsayisi</a>
                                     </li>
                                 </ul>
-                                <a href="/CurrentPanel/CargoTracking/" class="btn btn-primary btn-block"><b>Kargo Takip</b></a>
+                                <a href="/CurrentPanel/CargoTracking/" class="btn btn-primary btn-block"><b>Cargo Tracking</b></a>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -74,22 +74,22 @@
                         <!-- About Me Box -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Hakkımda</h3>
+                                <h3 class="card-title">About Me</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <strong><i class="fas fa-book mr-1"></i> Meslek</strong>
+                                <strong><i class="fas fa-book mr-1"></i> Job</strong>
                                 <p class="text-muted">
                                     Yazılım Mühendisi
                                 </p>
                                 <hr>
-                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Şehir</strong>
-                                <p class="text-muted">Ankara</p>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i> City</strong>
+                                <p class="text-muted">İstanbul</p>
                                 <hr>
-                                <strong><i class="fas fa-pencil-alt mr-1"></i> Telefon</strong>
+                                <strong><i class="fas fa-pencil-alt mr-1"></i> Telephone</strong>
                                 <p class="text-muted"> (532) (123-45 67)</p>
                                 <hr>
-                                <strong><i class="far fa-file-alt mr-1"></i> Duyurular</strong>
+                                <strong><i class="far fa-file-alt mr-1"></i> Announcements</strong>
                                 <p class="text-muted">Yeni ürünlerimiz için web sitemizi ziyaret edin.</p>
                             </div>
                             <!-- /.card-body -->
@@ -101,9 +101,9 @@
                         <div class="card">
                             <div class="card-header p-2">
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Mesajlar</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Duyurular</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Messages</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Announcements</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
                                 </ul>
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -132,11 +132,11 @@
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane" id="timeline">
                                         <!-- The timeline -->
-                                        @Html.Action("Partial2", "CurrentMail")
+                                        @Html.Action("Partial2", "CurrentPanel")
                                     </div>
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane" id="settings">
-                                        @Html.Action("Partial1", "CurrentMail")
+                                        @Html.Action("Partial1", "CurrentPanel")
                                     </div>
                                     <!-- /.tab-pane -->
                                 </div>

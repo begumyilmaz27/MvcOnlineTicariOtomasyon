@@ -10,7 +10,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 {
     public class CurrentPanelController : Controller
     {
-        // GET: CurrentPanel
+        // GET:
+        // 
         Context c = new Context();
         [Authorize]
         public ActionResult Index()
@@ -139,26 +140,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             Session.Abandon(); //istekleri terk et
             return RedirectToAction("Index", "Login");
         }
-        //public PartialViewResult Partial1()
-        //{
-        //    var mail = (string)Session["CariMail"];
-        //    var id = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault();
-        //    var caribul = c.Carilers.Find(id);
-        //    return PartialView("Partial1", caribul);
-        //}
-        //public PartialViewResult Partial2()
-        //{
-        //    var veriler = c.mesajlars.Where(x => x.Gonderici == "admin").ToList();
-        //    return PartialView(veriler);
-        //}
-        //public ActionResult CariBilgiGuncelle(Cariler cr)
-        //{
-        //    var cari = c.Carilers.Find(cr.Cariid);
-        //    cari.CariAd = cr.CariAd;
-        //    cari.CariSoyad = cr.CariSoyad;
-        //    cari.CariSifre = cr.CariSifre;
-        //    c.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var id = c.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
+            var caribul = c.Currents.Find(id);
+            return PartialView("Partial1", caribul);
+        }
+        public PartialViewResult Partial2()
+        {
+            var veriler = c.Messages.Where(x => x.Sender == "Admin").ToList();
+            return PartialView(veriler);
+        }
+        public ActionResult CariBilgiGuncelle(Current cr)
+        {
+            var cari = c.Currents.Find(cr.CurrentID);
+            cari.CurrentName = cr.CurrentName;
+            cari.CurrentSurname = cr.CurrentSurname;
+            cari.CurrentPassword = cr.CurrentPassword;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
