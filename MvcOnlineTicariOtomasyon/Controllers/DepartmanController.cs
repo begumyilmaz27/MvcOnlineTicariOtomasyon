@@ -8,21 +8,23 @@ using MvcOnlineTicariOtomasyon.Models.Sınıflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
         // GET: Departman
         Context c = new Context();
+        
         public ActionResult Index()
         {
             var degerler = c.Departmen.Where(x => x.DepartmanSituation == true).ToList();
             return View(degerler);
         }
-        [HttpGet]
+        [HttpGet]        
         public ActionResult DepartmanAdd()
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost]        
         public ActionResult DepartmanAdd(Departman d)
         {
             d.DepartmanSituation=true;

@@ -167,6 +167,8 @@
     <Compile Include="Models\Sınıflar\Class1.cs" />
     <Compile Include="Models\Sınıflar\Class2.cs" />
     <Compile Include="Models\Sınıflar\Class3.cs" />
+    <Compile Include="Models\Sınıflar\class4.cs" />
+    <Compile Include="Models\Sınıflar\Class5.cs" />
     <Compile Include="Models\Sınıflar\ClassGroup.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
     <Compile Include="Models\Sınıflar\Current.cs" />
@@ -2920,9 +2922,12 @@
     <Content Include="Views\CurrentPanel\Partial1.cshtml" />
     <Content Include="Views\CurrentPanel\Partial2.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Category\Deneme.cshtml" />
+    <Content Include="Views\Bill\Dynamic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Class3\" />
     <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
