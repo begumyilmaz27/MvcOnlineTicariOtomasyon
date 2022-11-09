@@ -50,10 +50,13 @@
                             <div class="sb-nav-link-icon"><i class="fas  fa-th"></i></div>
                             Categories
                         </a>
-                        <a class="nav-link" href="/Product/Index/">
-                            <div class="sb-nav-link-icon"><i class="fas  fa-th"></i></div>
-                            Products
-                        </a>
+                        @if (User.IsInRole("A"))
+                        {
+                            <a class="nav-link" href="/Product/Index/">
+                                <div class="sb-nav-link-icon"><i class="fas  fa-th"></i></div>
+                                Products
+                            </a>
+                        }                        
                         <a class="nav-link" href="/Departman/Index/">
                             <div class="sb-nav-link-icon"><i class="fas  fa-th"></i></div>
                             Departmen
@@ -93,10 +96,10 @@
                             <div class="sb-nav-link-icon"><i class="fas  fa-barcode"></i></div>
                             Bills
                         </a>
-                        <a class="nav-link" href="/Bill/Dynamic/">
-                            <div class="sb-nav-link-icon"><i class="fas  fa-hand-rock"></i></div>
-                            Dynamic Bills
-                        </a>
+                        @*<a class="nav-link" href="/Bill/Dynamic/">
+            <div class="sb-nav-link-icon"><i class="fas  fa-hand-rock"></i></div>
+            Dynamic Bills
+        </a>*@
                         <a class="nav-link" href="/Employee/EmployeeList/">
                             <div class="sb-nav-link-icon"><i class="fas  fa-table"></i></div>
                             Employee's Table
@@ -126,10 +129,13 @@
                             <div class="sb-nav-link-icon"><i class="fas  fa-university"></i></div>
                             Product Detail
                         </a>
-                        <a class="nav-link" href="/Statistic/SimpleTables/">
-                            <div class="sb-nav-link-icon"><i class="fas  fa-table"></i></div>
-                            Hızlı Bakış Tabloları
-                        </a>
+                        @if (User.IsInRole("A"))
+                        {
+                            <a class="nav-link" href="/Statistic/SimpleTables/">
+                                <div class="sb-nav-link-icon"><i class="fas  fa-table"></i></div>
+                                Hızlı Bakış Tabloları
+                            </a>
+                        }
                         <a class="nav-link" href="/ToDoList/Index/">
                             <div class="sb-nav-link-icon"><i class="fas  fa-check"></i></div>
                             To Do List
